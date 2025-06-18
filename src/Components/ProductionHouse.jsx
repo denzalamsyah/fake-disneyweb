@@ -45,7 +45,7 @@ function ProductionHouse() {
       {content.map((item, index) => (
         <div
           key={index}
-          className="border-[2px] border-gray-50 rounded-md hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer relative shadow-xl shadow-gray-900"
+          className="border-[2px] border-gray-50 rounded-md hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer relative shadow-md md:shadow-lg shadow-gray-600"
         >
           <video
             src={item.video}

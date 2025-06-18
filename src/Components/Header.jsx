@@ -1,5 +1,5 @@
 import logo from "../assets/Images/anime.png";
-import log from "../assets/Images/log.png";
+import log from "../assets/Images/users.png";
 import { IoHome } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 import { MdFilterListAlt } from "react-icons/md";
@@ -41,7 +41,7 @@ function Header() {
 
   return (
     <div className="flex items-center justify-between">
-      <div className="flex gap-8 items-center p-2">
+      <div className="flex gap-8 items-center px-2">
         <img
           src={logo}
           alt="logo website"

@@ -1,6 +1,3 @@
-import { HiChevronLeft } from "react-icons/hi";
-import { HiChevronRight } from "react-icons/hi";
-
 function MovieCard({ movie }) {
   return (
     <>
