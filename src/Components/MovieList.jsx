@@ -23,7 +23,7 @@ function MovieList({ genreId, index_ }) {
     // element.scrollLeft -= screenWidth - 110;
   };
   return (
-    <div className="relative">
+    <section className="relative pb-30">
       <HiChevronLeft
         className={`hidden md:block text-white text-4xl absolute z-[10] cursor-pointer left-0 ${
           index_ % 3 == 0 ? "mt-[80px]" : "mt-[150px]"
@@ -49,7 +49,7 @@ function MovieList({ genreId, index_ }) {
           )
         )}
       </div>
-    </div>
+    </section>
   );
 }
 

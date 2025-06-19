@@ -3,13 +3,13 @@ import MovieList from "./MovieList";
 
 function GenreMovieList() {
   return (
-    <div className="pt-5">
+    <main className="pt-5 mx-5 md:mx-0 pb-30">
       {GenreList.map(
         (item, index) =>
           index <= 4 && (
             <div key={index} className="p-2 md:px-13">
               <h2
-                className="text-[20px] px-3 text-white 
+                className="text-sm md:text-[20px] md:px-3 text-white 
                 font-bold"
               >
                 {item.name}
@@ -18,7 +18,7 @@ function GenreMovieList() {
             </div>
           )
       )}
-    </div>
+    </main>
   );
 }
 

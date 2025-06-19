@@ -41,7 +41,7 @@ function ProductionHouse() {
     },
   ];
   return (
-    <div className="flex gap-2 md:gap-5 p-2 px-5 md:px-16">
+    <section className="flex gap-2 md:gap-5 p-2 px-5 md:px-16">
       {content.map((item, index) => (
         <div
           key={index}
@@ -58,7 +58,7 @@ function ProductionHouse() {
           <img src={item.gambar} className="w-full z-[1] opacity-100" />
         </div>
       ))}
-    </div>
+    </section>
   );
 }
 

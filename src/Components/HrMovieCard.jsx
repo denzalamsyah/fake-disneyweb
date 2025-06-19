@@ -12,7 +12,9 @@ function HrMovieCard({ movie }) {
         alt={movie.title}
         className="w-[110px] md:w-[260px] rounded-lg hover:border-[3px] border-gray-400"
       />
-      <h2 className="w-[110px] md:w-[260px] text-white mt-2">{movie.title}</h2>
+      <h2 className="w-[110px] md:w-[260px] text-white mt-2 text-[12px] md:text-sm">
+        {movie.title}
+      </h2>
     </Link>
   );
 }

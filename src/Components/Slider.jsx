@@ -22,7 +22,7 @@ function Slider() {
   };
 
   return (
-    <div className="pt-22 md:pt-30">
+    <section className="pt-22 md:pt-30">
       <HiChevronLeft
         className="hidden md:block text-white text-4xl absolute mx-8 mt-[150px] cursor-pointer z-10 left-0"
         onClick={() => sliderLeft(elementRef.current)}
@@ -46,7 +46,7 @@ function Slider() {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

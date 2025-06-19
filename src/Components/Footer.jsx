@@ -3,8 +3,8 @@ import logo from "../assets/Images/anime.png";
 function Footer() {
   return (
     <footer className="px-4 divide-y bg-gray-900">
-      <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-        <div className="lg:w-1/3">
+      <div className="container flex flex-col justify-between py-3 md:py-8 mx-auto md:space-y-8 lg:flex-row lg:space-y-0">
+        <div className="hidden md:block lg:w-1/3">
           <a
             rel="noopener noreferrer"
             href="#"
@@ -13,15 +13,15 @@ function Footer() {
             <div className="flex w-18 h-18 md:w-25 md:h-25 rounded-full">
               <img src={logo} />
             </div>
-            <span className="text-lg md:text-2xl font-semibold">
+            <span className="text-sm md:text-2xl font-semibold">
               Anime Local Pride
             </span>
           </a>
         </div>
-        <div className="grid grid-cols-2 text-[12px] md:text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
+        <div className="grid grid-cols-4 text-[12px] md:text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
           <div className="space-y-3">
             <h3 className="tracking-wide uppercase">Product</h3>
-            <ul className="space-y-1">
+            <ul className="space-y-0 md:space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
                   Features
@@ -81,7 +81,7 @@ function Footer() {
           </div>
           <div className="space-y-3">
             <div className="uppercase">Social media</div>
-            <div className="flex justify-start space-x-3">
+            <div className="flex justify-start md:space-x-3">
               <a
                 rel="noopener noreferrer"
                 href="#"
@@ -130,7 +130,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="py-6 text-sm text-center dark:text-gray-600">
+      <div className="py-2 md:py-6 text-[12px] md:text-sm text-center dark:text-gray-600">
         ©DenzTech Co. All rights reserved.
       </div>
     </footer>

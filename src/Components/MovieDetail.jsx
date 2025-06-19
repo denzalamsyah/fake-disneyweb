@@ -41,13 +41,13 @@ function MovieDetail() {
     );
 
   return (
-    <div className="text-white px-4 md:px-10 py-10 pt-30 md:pt-40">
+    <main className="text-white px-4 md:px-10 py-10 pt-30 md:pt-40">
       <div className="flex flex-col md:flex-row items-center gap-8 mb-10 md:mb-20 md:justify-center">
         {/* Poster Image */}
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.title}
-          className="w-[100%] md:w-[400px] object-cover rounded-2xl cursor-pointer"
+          className="w-[70%] md:w-[400px] object-cover rounded-2xl cursor-pointer"
         />
         {/* Detail */}
         <figcaption className="md:w-1/2 w-full">
@@ -103,9 +103,10 @@ function MovieDetail() {
         </figcaption>
       </div>
 
-      <h2 className="text-lg md:text-2xl text-center font-semibold mb-3">
+      <h2 className="text-lg md:text-2xl text-center font-bold underline underline-offset-8 mb-10">
         Top Cast
       </h2>
+
       <div className="relative bg-gray-900 rounded-lg mb-10 md:mb-20">
         <HiChevronLeft
           className={`hidden md:block mt-[330px] text-white text-4xl absolute z-[10] cursor-pointer left-0
@@ -129,11 +130,12 @@ function MovieDetail() {
         </div>
       </div>
 
-      <h2 className="text-lg md:text-2xl text-center font-semibold mb-3">
+      <h2 className="text-lg md:text-2xl text-center font-bold underline underline-offset-8 mb-10 ">
         Similar Movies
       </h2>
+
       <MovieList />
-    </div>
+    </main>
   );
 }
 
