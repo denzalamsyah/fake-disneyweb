@@ -22,13 +22,13 @@ function Slider() {
   };
 
   return (
-    <div>
+    <div className="pt-22 md:pt-30">
       <HiChevronLeft
-        className="hidden md:block text-white text-4xl absolute mx-8 mt-[150px] cursor-pointer"
+        className="hidden md:block text-white text-4xl absolute mx-8 mt-[150px] cursor-pointer z-10 left-0"
         onClick={() => sliderLeft(elementRef.current)}
       />
       <HiChevronRight
-        className="hidden md:block text-white text-4xl absolute mx-8 mt-[150px] cursor-pointer right-0"
+        className="hidden md:block text-white text-4xl absolute mx-8 mt-[150px] cursor-pointer z-10 right-0"
         onClick={() => sliderRight(elementRef.current)}
       />
 
@@ -41,7 +41,8 @@ function Slider() {
             key={index}
             src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
             alt={item.title}
-            className="min-w-full md:h-[310px] object-cover object-left-top mr-5 rounded-2xl hover:border-4 border-gray-400 transform-all duration-100 ease-in "
+            className="min-w-full md:h-[310px] object-cover object-left-top mr-5 rounded-2xl hover:border-4 border-gray-400 transition-all duration-100 ease-in hover:scale-105
+"
           />
         ))}
       </div>

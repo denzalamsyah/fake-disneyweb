@@ -12,7 +12,7 @@ function MovieList({ genreId, index_ }) {
 
   useEffect(() => {
     fetchMoviesByGenre(genreId).then(setMovieListbyGenre);
-  }, []);
+  }, [genreId]);
 
   const sliderRight = (element) => {
     element.scrollLeft += 800;
@@ -41,18 +41,6 @@ function MovieList({ genreId, index_ }) {
         className="flex gap-8 overflow-x-auto scrollbar-hide px-3
     py-5 scroll-smooth"
       >
-        {/* {movieListbyGenre.map((item) => (
-          <>
-            {index_ % 3 == 0 ? (
-              <HrMovieCard movie={item} key={item.id} />
-            ) : (
-              <MovieCard movie={item} key={item.id} />
-            )}
-          </>
-
-          // <MovieCard movie={item} key={index} />
-        ))} */}
-
         {movieListbyGenre.map((item) =>
           index_ % 3 === 0 ? (
             <HrMovieCard movie={item} key={item.id} />

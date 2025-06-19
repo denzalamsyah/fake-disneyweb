@@ -1,20 +1,20 @@
 // import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import GenreMovieList from "./Components/GenreMovieList";
 import Header from "./Components/Header";
-import ProductionHouse from "./Components/ProductionHouse";
-import Slider from "./Components/Slider";
+import AppRoutes from "./Routes/AppRoutes";
+import Footer from "./Components/Footer";
+import AppWrapper from "./Pages/AppWrapper";
 
 function App() {
-  // const [count, setCount] = useState(0);
-
   return (
-    <div>
-      <Header />
-      <Slider />
-      <ProductionHouse />
-      <GenreMovieList />
-    </div>
+    <BrowserRouter>
+      <AppWrapper>
+        <Header />
+        <AppRoutes />
+        <Footer />
+      </AppWrapper>
+    </BrowserRouter>
   );
 }
 
