@@ -46,7 +46,7 @@ function Header() {
   ];
 
   return (
-    <div className="fixed top-0 left-0 w-full z-20 flex items-center justify-between bg-[#131520] md:px-4 py-0">
+    <div className="fixed top-0 left-0 w-full z-20 flex items-center justify-between bg-[#131520] opacity-85 md:px-4 py-0">
       <div className="flex gap-8 items-center md:px-2">
         <Link
           className="w-[80px] hidden md:block md:w-[115px] object-cover"

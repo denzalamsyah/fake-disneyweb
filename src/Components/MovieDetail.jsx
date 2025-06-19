@@ -47,7 +47,7 @@ function MovieDetail() {
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.title}
-          className="w-[70%] md:w-[400px] object-cover rounded-2xl cursor-pointer"
+          className="w-[70%] md:w-[400px] object-cover border-2 rounded-xl cursor-pointer hover:shadow-lg hover:shadow-gray-500 hover:scale-100 transition-all duration-100 ease-in"
         />
         {/* Detail */}
         <figcaption className="md:w-1/2 w-full">
@@ -55,19 +55,19 @@ function MovieDetail() {
             {movie.title}
           </h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-6 md:mb-8">
-            <li className="flex gap-2 font-bold p-2 bg-gray-800">
+            <li className="flex gap-2 font-bold p-2 bg-gray-800 text-orange-400">
               <span className="whitespace-nowrap w-fit">Release :</span>
               <p className="font-normal">{movie.release_date}</p>
             </li>
-            <li className="flex gap-2 font-bold p-2 bg-gray-800">
+            <li className="flex gap-2 font-bold p-2 bg-gray-800 text-red-500">
               <span className="whitespace-nowrap w-fit">Duration :</span>
               <p className="font-normal">{movie.runtime} min</p>
             </li>
-            <li className="flex gap-2 font-bold p-2 bg-gray-800">
+            <li className="flex gap-2 font-bold p-2 bg-gray-800 text-green-600">
               <span className="whitespace-nowrap w-fit">Popularity :</span>
               <p className="font-normal">{movie.popularity}</p>
             </li>
-            <li className="flex gap-2 text-gray-300 font-bold p-2 bg-gray-800">
+            <li className="flex gap-2 text-blue-400 font-bold p-2 bg-gray-800">
               <span className="whitespace-nowrap w-fit">Genres :</span>
               <p className="font-normal">
                 {movie.genres.map((g) => g.name).join(", ")}

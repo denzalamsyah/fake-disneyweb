@@ -23,7 +23,7 @@ function MovieList({ genreId, index_ }) {
     // element.scrollLeft -= screenWidth - 110;
   };
   return (
-    <section className="relative pb-30">
+    <section className="relative">
       <HiChevronLeft
         className={`hidden md:block text-white text-4xl absolute z-[10] cursor-pointer left-0 ${
           index_ % 3 == 0 ? "mt-[80px]" : "mt-[150px]"
@@ -38,7 +38,7 @@ function MovieList({ genreId, index_ }) {
       />
       <div
         ref={elementRef}
-        className="flex gap-8 overflow-x-auto scrollbar-hide px-3
+        className="flex gap-4 overflow-x-auto scrollbar-hide px-3
     py-5 scroll-smooth"
       >
         {movieListbyGenre.map((item) =>
