@@ -24,11 +24,11 @@ function Slider() {
   return (
     <section className="pt-22 md:pt-30">
       <HiChevronLeft
-        className="hidden md:block text-white text-4xl absolute mx-8 mt-[150px] cursor-pointer z-10 left-0"
+        className="md:block text-black rounded-full text-3xl md:text-4xl absolute mx-4 md:mx-8 mt-[200px] md:mt-[150px] cursor-pointer z-10 bg-gray-500 opacity-70 left-0"
         onClick={() => sliderLeft(elementRef.current)}
       />
       <HiChevronRight
-        className="hidden md:block text-white text-4xl absolute mx-8 mt-[150px] cursor-pointer z-10 right-0"
+        className="md:block text-black rounded-full text-3xl md:text-4xl absolute mx-4 md:mx-8 mt-[200px] md:mt-[150px] cursor-pointer z-10 bg-gray-500 opacity-70 right-0"
         onClick={() => sliderRight(elementRef.current)}
       />
 
@@ -37,13 +37,24 @@ function Slider() {
         ref={elementRef}
       >
         {movieList.map((item, index) => (
-          <img
+          <div
             key={index}
-            src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
-            alt={item.title}
-            className="min-w-full md:h-[310px] object-cover object-left-top mr-5 rounded-2xl hover:border-4 border-gray-400 transition-all duration-100 ease-in hover:scale-105
-"
-          />
+            className=" min-w-full h-[400px] md:h-[320px] rounded-2xl mr-5"
+          >
+            {/* Untuk layar kecil (mobile) */}
+            <img
+              src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+              alt={item.title}
+              className="block md:hidden object-cover object-left-top mr-5 rounded-2xl hover:border-4
+              border-gray-400 transition-all duration-100 ease-in hover:scale-105"
+            />
+            <img
+              src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
+              alt={item.title}
+              className="hidden md:block min-w-full md:h-[310px] object-cover object-left-top mr-5 rounded-2xl hover:border-4
+          border-gray-400 transition-all duration-100 ease-in hover:scale-105"
+            />
+          </div>
         ))}
       </div>
     </section>

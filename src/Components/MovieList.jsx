@@ -25,14 +25,14 @@ function MovieList({ genreId, index_ }) {
   return (
     <section className="relative">
       <HiChevronLeft
-        className={`hidden md:block text-white text-4xl absolute z-[10] cursor-pointer left-0 ${
-          index_ % 3 == 0 ? "mt-[80px]" : "mt-[150px]"
+        className={`text-black bg-gray-400 opacity-70 rounded-full text-lg md:text-4xl absolute z-[10] cursor-pointer left-0 ${
+          index_ % 3 == 0 ? "mt-[40px] md:mt-[80px]" : "mt-[90px] md:mt-[150px]"
         }`}
         onClick={() => sliderLeft(elementRef.current)}
       />
       <HiChevronRight
-        className={`hidden md:block text-white text-4xl absolute z-[10] cursor-pointer right-0 ${
-          index_ % 3 == 0 ? "mt-[80px]" : "mt-[150px]"
+        className={`text-black bg-gray-400 opacity-70 rounded-full text-lg md:text-4xl absolute z-[10] cursor-pointer right-0 ${
+          index_ % 3 == 0 ? "mt-[40px] md:mt-[80px]" : "mt-[90px] md:mt-[150px]"
         }`}
         onClick={() => sliderRight(elementRef.current)}
       />

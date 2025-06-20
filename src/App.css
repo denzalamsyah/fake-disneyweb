@@ -1,22 +1,23 @@
+/* App.css */
+
 #root {
-  background-color: #131520;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
+  color: #ffffff;
+  background: linear-gradient(
+    -45deg,
+    #242424,
+    #0040ff,
+    #1a1a2e,
+    #3a3a52,
+    #00c3ff
+  );
+  background-size: 600% 600%;
+  animation: gradientFlow 8s ease infinite;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
+/* Optional logo animation */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -26,9 +27,15 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
