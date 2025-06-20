@@ -50,7 +50,7 @@ function Header() {
       <div className="flex gap-8 items-center md:px-2">
         <Link
           className="w-[80px] hidden md:block md:w-[115px] object-cover"
-          to={`/`}
+          to={``}
         >
           <img src={logo} alt="logo website" className="w-full" />
         </Link>
@@ -94,6 +94,7 @@ function Header() {
                   name={item.name}
                   Icon={item.icon}
                   rute={item.rute}
+                  toggle={!toggle}
                 />
               ))}
             </div>

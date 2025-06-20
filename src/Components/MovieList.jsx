@@ -6,7 +6,7 @@ import { HiChevronRight } from "react-icons/hi";
 import HrMovieCard from "./HrMovieCard";
 // const screenWidth = window.innerWidth;
 
-function MovieList({ genreId, index_ }) {
+function MovieList({ genreId }) {
   const [movieListbyGenre, setMovieListbyGenre] = useState([]);
   const elementRef = useRef();
 
@@ -23,33 +23,25 @@ function MovieList({ genreId, index_ }) {
     // element.scrollLeft -= screenWidth - 110;
   };
   return (
-    <section className="relative">
+    <main className="relative">
       <HiChevronLeft
-        className={`text-black bg-gray-400 opacity-70 rounded-full text-lg md:text-4xl absolute z-[10] cursor-pointer left-0 ${
-          index_ % 3 == 0 ? "mt-[40px] md:mt-[80px]" : "mt-[90px] md:mt-[150px]"
-        }`}
+        className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[90px] md:mt-[150px]"
         onClick={() => sliderLeft(elementRef.current)}
       />
       <HiChevronRight
-        className={`text-black bg-gray-400 opacity-70 rounded-full text-lg md:text-4xl absolute z-[10] cursor-pointer right-0 ${
-          index_ % 3 == 0 ? "mt-[40px] md:mt-[80px]" : "mt-[90px] md:mt-[150px]"
-        }`}
+        className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[90px] md:mt-[150px]"
         onClick={() => sliderRight(elementRef.current)}
       />
-      <div
+      <section
         ref={elementRef}
         className="flex gap-4 overflow-x-auto scrollbar-hide px-3
     py-5 scroll-smooth"
       >
-        {movieListbyGenre.map((item) =>
-          index_ % 3 === 0 ? (
-            <HrMovieCard movie={item} key={item.id} />
-          ) : (
-            <MovieCard movie={item} key={item.id} />
-          )
-        )}
-      </div>
-    </section>
+        {movieListbyGenre.map((item) => (
+          <MovieCard movie={item} key={item.id} />
+        ))}
+      </section>
+    </main>
   );
 }
 

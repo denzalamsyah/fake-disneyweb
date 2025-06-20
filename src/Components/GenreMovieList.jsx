@@ -3,7 +3,7 @@ import MovieList from "./MovieList";
 
 function GenreMovieList() {
   return (
-    <main className="pt-5 mx-5 md:mx-0 pb-30">
+    <main className="pt-5 mx-5 md:mx-0 pb-10">
       {GenreList.map(
         (item, index) =>
           index <= 4 && (
