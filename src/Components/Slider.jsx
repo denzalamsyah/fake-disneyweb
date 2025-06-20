@@ -22,18 +22,18 @@ function Slider() {
   };
 
   return (
-    <section className="pt-22 md:pt-30">
+    <section className="pt-15 pb-3 md:pb-0 md:pt-30">
       <HiChevronLeft
-        className="md:block text-black rounded-full text-3xl md:text-4xl absolute mx-4 md:mx-8 mt-[200px] md:mt-[150px] cursor-pointer z-10 bg-gray-500 opacity-70 left-0"
+        className="text-black rounded-full text-3xl md:text-4xl absolute mx-4 md:mx-8 mt-[200px] md:mt-[190px] cursor-pointer z-10 bg-gray-500 opacity-70 left-0"
         onClick={() => sliderLeft(elementRef.current)}
       />
       <HiChevronRight
-        className="md:block text-black rounded-full text-3xl md:text-4xl absolute mx-4 md:mx-8 mt-[200px] md:mt-[150px] cursor-pointer z-10 bg-gray-500 opacity-70 right-0"
+        className="text-black rounded-full text-3xl md:text-4xl absolute mx-4 md:mx-8 mt-[200px] md:mt-[190px] cursor-pointer z-10 bg-gray-500 opacity-70 right-0"
         onClick={() => sliderRight(elementRef.current)}
       />
 
       <div
-        className="flex overflow-x-auto scrollbar-hide w-full px-16 py-4 scroll-smooth"
+        className="flex overflow-x-auto scrollbar-hide w-full px-16 py-13 scroll-smooth"
         ref={elementRef}
       >
         {movieList.map((item, index) => (
