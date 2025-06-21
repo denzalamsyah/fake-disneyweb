@@ -24,11 +24,11 @@ function Slider() {
   return (
     <section className="pt-15 pb-3 md:pb-0 md:pt-30">
       <HiChevronLeft
-        className="text-black rounded-full text-3xl md:text-5xl absolute mx-4 md:mx-8 mt-[200px] md:mt-[190px] cursor-pointer z-10 bg-gray-500 opacity-70 left-0"
+        className="text-black rounded-full text-3xl md:text-5xl absolute mx-4 md:mx-8 mt-[230px] md:mt-[190px] cursor-pointer z-10 bg-gray-500 opacity-70 left-0"
         onClick={() => sliderLeft(elementRef.current)}
       />
       <HiChevronRight
-        className="text-black rounded-full text-3xl md:text-5xl absolute mx-4 md:mx-8 mt-[200px] md:mt-[190px] cursor-pointer z-10 bg-gray-500 opacity-70 right-0"
+        className="text-black rounded-full text-3xl md:text-5xl absolute mx-4 md:mx-8 mt-[230px] md:mt-[190px] cursor-pointer z-10 bg-gray-500 opacity-70 right-0"
         onClick={() => sliderRight(elementRef.current)}
       />
 

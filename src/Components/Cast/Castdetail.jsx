@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import { MdOutlineScreenShare } from "react-icons/md";
 import { FaBookmark } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
-import TVList from "./TVList";
-import { fetchTVListById } from "../Services/tvServices";
+import TVList from "../TVList";
+import { fetchTVListById } from "../../Services/tvServices";
 
-function TvListDetail() {
+function CastDetail() {
   const { id } = useParams();
   const [TvDetail, setTvDetail] = useState(null);
   const [showFullOverview, setShowFullOverview] = useState(false);
@@ -18,7 +18,6 @@ function TvListDetail() {
   // request API
   useEffect(() => {
     fetchTVListById(id).then(setTvDetail);
-    window.scrollTo(0, 0);
   }, [id]);
 
   // jika movie belum tersedia, tampilkan loading
@@ -146,9 +145,9 @@ function TvListDetail() {
           </figcaption>
         </div>
       </div>
-      <TVList />
+      {/* <TVList /> */}
     </main>
   );
 }
 
-export default TvListDetail;
+export default CastDetail;

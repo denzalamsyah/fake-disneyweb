@@ -15,7 +15,8 @@ function MovieDetail() {
   const [cast, setCast] = useState([]);
   const elementRef = useRef();
   const [fav, setFav] = useState(false);
-  console.log(movie);
+  const [showFullOverview, setShowFullOverview] = useState(false);
+  const maxOverviewLength = 300;
 
   // request API
   useEffect(() => {
@@ -61,7 +62,7 @@ function MovieDetail() {
           backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url(https://image.tmdb.org/t/p/w500${movie.poster_path})`,
         }}
       >
-        <div className="flex flex-col md:flex-row items-center gap-8 mb-10 md:mb-20 md:justify-center">
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-10 md:mb-20 md:justify-center">
           {/* Poster Image */}
           <div className="relative group w-[70%] md:w-[400px]">
             <img
@@ -78,7 +79,7 @@ function MovieDetail() {
           </div>
           {/* Detail */}
           <figcaption className="md:w-1/2 w-full">
-            <h2 className="text-xl md:text-5xl font-bold mb-5 md:mb-8">
+            <h2 className="text-xl md:text-3xl font-bold mb-5 md:mb-8">
               {movie.title}
             </h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 mb-6 md:mb-8">
@@ -141,9 +142,22 @@ function MovieDetail() {
                 </button>
               </div>
             </ul>
-            <p className="mb-6 text-justify text-gray-300 font-bold">
-              {movie.overview}
+            <p className="mb-2 text-justify text-gray-300 font-bold">
+              {showFullOverview
+                ? movie.overview
+                : movie.overview.slice(0, maxOverviewLength) +
+                  (movie.overview.length > maxOverviewLength ? "..." : "")}
             </p>
+
+            {movie.overview.length > maxOverviewLength && (
+              <button
+                className="text-blue-400 font-semibold hover:underline"
+                onClick={() => setShowFullOverview(!showFullOverview)}
+              >
+                {showFullOverview ? "Hide" : "More"}
+              </button>
+            )}
+
             <p className="italic text-sm text-gray-400">"{movie.tagline}"</p>
           </figcaption>
         </div>

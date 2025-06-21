@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../Pages/Home";
 import MovieDetails from "../Pages/MovieDetails";
 import TvDetails from "../Pages/TvDetails";
+import CastDetails from "../Pages/CastDetails";
+import PersonDetails from "../Pages/PersonDetails";
 
 function AppRoutes() {
   return (
@@ -12,6 +14,8 @@ function AppRoutes() {
       {/* Halaman detail film */}
       <Route path="/movie/:id" element={<MovieDetails />} />
       <Route path="/tv/:id" element={<TvDetails />} />
+      <Route path="/cast/:id" element={<CastDetails />} />
+      <Route path="/person/:id" element={<PersonDetails />} />
     </Routes>
   );
 }
