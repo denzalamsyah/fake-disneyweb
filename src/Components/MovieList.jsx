@@ -25,11 +25,11 @@ function MovieList({ genreId }) {
   return (
     <main className="relative">
       <HiChevronLeft
-        className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[90px] md:mt-[150px]"
+        className="text-black bg-gray-400 opacity-70 rounded-full text-3xl mx-4 md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[90px] md:mt-[150px]"
         onClick={() => sliderLeft(elementRef.current)}
       />
       <HiChevronRight
-        className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[90px] md:mt-[150px]"
+        className="text-black bg-gray-400 opacity-70 rounded-full text-3xl mx-4 md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[90px] md:mt-[150px]"
         onClick={() => sliderRight(elementRef.current)}
       />
       <section

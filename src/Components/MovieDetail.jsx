@@ -169,13 +169,13 @@ function MovieDetail() {
 
       <div className="relative bg-gray-900 rounded-lg mb-10 md:mb-20 md:mx-10">
         <HiChevronLeft
-          className={`md:block bg-gray-500 rounded-full mt-[100px] md:mt-[400px] opacity-80 text-gray-900 text-lg md:text-4xl absolute z-[10] cursor-pointer left-0
+          className={`md:block bg-gray-500 rounded-full mt-[100px] md:mt-[400px] opacity-80 text-gray-900 text-3xl mx-4 md:text-4xl absolute z-[10] cursor-pointer left-0
                
               }`}
           onClick={() => sliderLeft(elementRef.current)}
         />
         <HiChevronRight
-          className={`md:block bg-gray-500 rounded-full mt-[100px] md:mt-[400px] opacity-80 text-gray-900 text-lg md:text-4xl absolute z-[10] cursor-pointer right-0
+          className={`md:block bg-gray-500 rounded-full mt-[100px] md:mt-[400px] opacity-80 text-gray-900 text-3xl mx-4 md:text-4xl absolute z-[10] cursor-pointer right-0
               }`}
           onClick={() => sliderRight(elementRef.current)}
         />

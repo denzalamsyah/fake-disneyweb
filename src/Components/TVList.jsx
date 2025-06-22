@@ -39,6 +39,11 @@ function TVList() {
   };
   return (
     <main className="mx-5 md:mx-0 pb-10">
+      <p className="text-lg md:text-2xl text-justify mb-10 md:mb-15 md:px-15">
+        Welcome to the world of television entertainment! Here, you can find
+        various interesting TV shows, from drama, comedy, action, to
+        documentaries that are full of inspiration and information.
+      </p>
       <h2 className="text-xl md:text-4xl underline underline-offset-8 text-center">
         TV shows
       </h2>
@@ -51,11 +56,11 @@ function TVList() {
         </h2>
         <div className="relative">
           <HiChevronLeft
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
+            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
             onClick={() => sliderLeft(elementRef.current)}
           />
           <HiChevronRight
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
+            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
             onClick={() => sliderRight(elementRef.current)}
           />
           <div
@@ -78,11 +83,11 @@ function TVList() {
         </h2>
         <div className="relative">
           <HiChevronLeft
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
+            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
             onClick={() => sliderLeft(elementRefP.current)}
           />
           <HiChevronRight
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
+            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
             onClick={() => sliderRight(elementRefP.current)}
           />
           <div
@@ -105,11 +110,11 @@ function TVList() {
         </h2>
         <div className="relative">
           <HiChevronLeft
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
+            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
             onClick={() => sliderLeft(elementRefOta.current)}
           />
           <HiChevronRight
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
+            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
             onClick={() => sliderRight(elementRefOta.current)}
           />
           <div
@@ -132,11 +137,11 @@ function TVList() {
         </h2>
         <div className="relative">
           <HiChevronLeft
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
+            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
             onClick={() => sliderLeft(elementRefAT.current)}
           />
           <HiChevronRight
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
+            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
             onClick={() => sliderRight(elementRefAT.current)}
           />
           <div

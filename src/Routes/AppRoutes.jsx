@@ -5,6 +5,7 @@ import MovieDetails from "../Pages/MovieDetails";
 import TvDetails from "../Pages/TvDetails";
 import CastDetails from "../Pages/CastDetails";
 import PersonDetails from "../Pages/PersonDetails";
+import SearchPage from "../Pages/SearchPage";
 
 function AppRoutes() {
   return (
@@ -16,6 +17,7 @@ function AppRoutes() {
       <Route path="/tv/:id" element={<TvDetails />} />
       <Route path="/cast/:id" element={<CastDetails />} />
       <Route path="/person/:id" element={<PersonDetails />} />
+      <Route path="/search" element={<SearchPage />} />
     </Routes>
   );
 }
