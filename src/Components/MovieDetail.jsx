@@ -163,11 +163,17 @@ function MovieDetail() {
         </div>
       </div>
 
-      <h2 className="text-lg md:text-2xl text-center font-bold underline underline-offset-8 mb-10 mt-10">
-        Top Cast
-      </h2>
-
-      <div className="relative bg-gray-900 rounded-lg mb-10 md:mb-20 md:mx-10">
+      <div className="text-sm md:text-xl text-justify p-4 mb-5 md:px-15 bg-gray-900 md:py-10 rounded-lg md:rounded-none">
+        <h2 className="text-lg md:text-4xl underline underline-offset-8 text-center mb-4 md:mb-8">
+          Top Cast
+        </h2>
+        <p>
+          Welcome to the world of television entertainment! Here, you can find
+          various interesting TV shows, from drama, comedy, action, to
+          documentaries that are full of inspiration and information.
+        </p>
+      </div>
+      <div className="relative bg-gray-900 rounded-lg mb-10 md:mb-15 md:mx-10">
         <HiChevronLeft
           className={`md:block bg-gray-500 rounded-full mt-[100px] md:mt-[400px] opacity-80 text-gray-900 text-3xl mx-4 md:text-4xl absolute z-[10] cursor-pointer left-0
                
@@ -190,9 +196,20 @@ function MovieDetail() {
         </div>
       </div>
 
-      <h2 className="text-lg md:text-2xl text-center font-bold underline underline-offset-8 mb-10 ">
-        Similar Movies
-      </h2>
+      <div className="text-sm md:text-xl text-justify p-4 mb-5 md:px-15 bg-gray-900 md:py-10 rounded-lg md:rounded-none">
+        <h2 className="text-lg md:text-4xl underline underline-offset-8 text-center mb-4 md:mb-8">
+          Similiar Movie
+        </h2>
+        <p>
+          Similar Movies showcases a curated selection of films that share
+          themes, atmosphere, or cinematic style with your main choice.
+          Presented in a sleek layout—whether carousel or horizontal list—each
+          entry features the movie poster and title, making it easy for you to
+          explore new yet familiar recommendations. This section enhances your
+          viewing journey by guiding you toward fresh alternatives that echo the
+          essence of the film you love.
+        </p>
+      </div>
 
       <MovieList />
     </main>

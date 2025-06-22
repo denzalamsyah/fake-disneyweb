@@ -49,3 +49,13 @@ export const fetchTVListById = async (id) => {
     return null;
   }
 };
+
+export const fetchTVListFiltered = async (tv) => {
+  try {
+    const res = await api.get(`/tv/${tv}`);
+    return res.data.results;
+  } catch (err) {
+    console.error("Error fetchTVListFiltered:", err);
+    return [];
+  }
+};

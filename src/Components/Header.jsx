@@ -90,8 +90,11 @@ function Header() {
           </div>
         </div>
         <div className="flex items-center justify-center gap-5 text-[18px]">
-          <FaSearch onClick={() => setShowSearchMenu(true)} />
-          <IoNotifications />
+          <FaSearch
+            onClick={() => setShowSearchMenu(true)}
+            className="cursor-pointer"
+          />
+          <IoNotifications className="cursor-pointer" />
           <img src={log} className="w-[40px] rounded-full m-4" />
         </div>
       </div>

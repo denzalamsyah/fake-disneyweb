@@ -39,14 +39,16 @@ function TVList() {
   };
   return (
     <main className="mx-5 md:mx-0 pb-10">
-      <p className="text-lg md:text-2xl text-justify mb-10 md:mb-15 md:px-15">
-        Welcome to the world of television entertainment! Here, you can find
-        various interesting TV shows, from drama, comedy, action, to
-        documentaries that are full of inspiration and information.
-      </p>
-      <h2 className="text-xl md:text-4xl underline underline-offset-8 text-center">
-        TV shows
-      </h2>
+      <div className="text-sm md:text-xl text-justify p-4 mb-5 md:px-15 bg-gray-900 md:py-20 rounded-lg md:rounded-none">
+        <h2 className="text-lg md:text-4xl underline underline-offset-8 text-center mb-4">
+          TV shows
+        </h2>
+        <p>
+          Welcome to the world of television entertainment! Here, you can find
+          various interesting TV shows, from drama, comedy, action, to
+          documentaries that are full of inspiration and information.
+        </p>
+      </div>
       <section className="p-2 md:px-13">
         <h2
           className="text-sm md:text-[20px] md:px-3 text-white 
