@@ -18,6 +18,7 @@ function Header() {
   const [toggle, setToggle] = useState(false);
   const [showSearchMenu, setShowSearchMenu] = useState(false);
   const [ShowNotification, setShowNotification] = useState(false);
+  const [ShowProfile, setShowProfile] = useState(false);
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
 
@@ -111,7 +112,42 @@ function Header() {
               <p className=" text-[10px] font-bold text-white text-center">1</p>
             </div>
           </span>
-          <img src={log} className="w-[40px] rounded-full m-4" />
+          <img
+            src={log}
+            className="w-[40px] rounded-full m-4 cursor-pointer"
+            onClick={() => setShowProfile(!ShowProfile)}
+          />
+          {/* tampilkan toggle profile */}
+          {ShowProfile && (
+            <div className="absolute border border-gray-600 bg-gray-800 rounded-lg top-15 right-2 grid grid-cols-1 text-sm w-40 md:top-25 md:right-5">
+              <div className="border-b p-2 px-4 cursor-pointer">
+                <h2 className="hover:underline underline-offset-4 font-bold">
+                  Your Username
+                </h2>
+                <p className="text-[10px] mt-2 hover:text-gray-500">
+                  View Profile
+                </p>
+              </div>
+              <div className="border-b p-2 px-4 cursor-pointer">
+                <p className="hover:underline underline-offset-4">
+                  Discussions
+                </p>
+                <p className="hover:underline underline-offset-4">List</p>
+                <p className="hover:underline underline-offset-4">Rating</p>
+                <p className="hover:underline underline-offset-4">Watchlist</p>
+              </div>
+              <div className="border-b p-2 px-4 cursor-pointer">
+                <p className="hover:underline underline-offset-4">
+                  Edit Profile
+                </p>
+                <p className="hover:underline underline-offset-4">Settings</p>
+              </div>
+              <p className="p-2 px-4 cursor-pointer hover:underline underline-offset-4">
+                Logout
+              </p>
+            </div>
+          )}
+          {/* tampilkan notifikasi */}
           {ShowNotification && (
             <div className="absolute top-12 right-25 left-25 shadow-lg rounded-lg bg-white mx-auto p-2 mdp-4 flex md:top-20 md:right-30 md:left-200 md:p-5">
               <div>
@@ -144,6 +180,7 @@ function Header() {
           )}
         </div>
       </div>
+      {/* tampilkan menu ketika klik burger */}
       {showSearchMenu && (
         <div className="fixed mt-18 md:mt-28 w-full h-10 bg-[#1c2833] opacity-90 z-10">
           {/* Close Button */}

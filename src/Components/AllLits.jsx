@@ -36,35 +36,44 @@ function AllList() {
     <main className="py-28 md:py-50">
       <section className="md:mx-5 md:p-5 grid md:grid-cols-4 gap-8 rounded-xl bg-gray-800">
         <div className="md:rounded-xl h-fit border-b md:border">
-          <h2 className="text-center bg-green-400 text-white p-4 md:rounded-t-lg text-lg">
+          <h2 className="text-center bg-blue-400 text-white p-4 md:rounded-t-lg text-lg">
             Search Result
           </h2>
           <div className="flex flex-wrap items-center justify-center md:grid md:grid-cols-1 gap-4 md:mt-4 p-4 md:p-2 px-5">
             <span
-              className={`cursor-pointer border text-[12px] p-2 md:text-sm rounded-lg hover:bg-gray-700 ${
-                mediaType === "movie" ? "font-bold" : ""
+              className={`flex gap-2 md:justify-between cursor-pointer border text-[12px] p-2 md:text-sm rounded-lg hover:bg-gray-700 ${
+                mediaType === "movie" ? "font-bold bg-gray-600" : ""
               }`}
               onClick={() => setMediaType("movie")}
             >
-              Movies
+              <p>Movies</p>
+              <div className="bg-blue-400 px-1 rounded-sm">
+                <p>2500</p>
+              </div>
             </span>
             <span
-              className={`cursor-pointer border text-[12px] p-2 md:text-sm rounded-lg hover:bg-gray-700 ${
-                mediaType === "tv" ? "font-bold" : ""
+              className={`flex gap-2 md:justify-between cursor-pointer border text-[12px] p-2 md:text-sm rounded-lg hover:bg-gray-700 ${
+                mediaType === "tv" ? "font-bold bg-gray-600" : ""
               }`}
               onClick={() => setMediaType("tv")}
             >
-              TV Shows
+              <p>TV Shows</p>
+              <div className="bg-blue-400 px-1 rounded-sm">
+                <p>3000</p>
+              </div>
             </span>
             <span
-              className={`cursor-pointer border text-[12px] p-2 md:text-sm rounded-lg hover:bg-gray-700 ${
-                mediaType === "person" ? "font-bold" : ""
+              className={`flex gap-2 md:justify-between cursor-pointer border text-[12px] p-2 md:text-sm rounded-lg hover:bg-gray-700 ${
+                mediaType === "person" ? "font-bold bg-gray-600" : ""
               }`}
               onClick={() => setMediaType("person")}
             >
-              Person
+              <p>Person</p>
+              <div className="bg-blue-400 px-1 rounded-sm">
+                <p>5000</p>
+              </div>
             </span>
-            <span
+            {/* <span
               className={`cursor-pointer border text-[12px] p-2 md:text-sm rounded-lg hover:bg-gray-700  ${
                 mediaType === "company" ? "font-bold" : ""
               }`}
@@ -87,7 +96,7 @@ function AllList() {
               onClick={() => setMediaType("company")}
             >
               Rating
-            </span>
+            </span> */}
           </div>
         </div>
         <div className="mx-5 md:mx-0 md:col-span-3 rounded-xl">
