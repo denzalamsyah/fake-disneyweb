@@ -7,9 +7,12 @@ const screenWidth = window.innerWidth;
 function Slider() {
   const [movieList, setMovieList] = useState([]);
   const elementRef = useRef();
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetchTrendingMovies().then(setMovieList);
+    fetchTrendingMovies().then((res) => {
+      setMovieList(res);
+      setLoading(false); // ✅ dijalankan setelah data masuk
+    });
   }, []);
 
   const sliderRight = (element) => {
@@ -23,14 +26,18 @@ function Slider() {
 
   return (
     <section className="pt-15 pb-3 md:pb-0 md:pt-30">
-      <HiChevronLeft
-        className="text-black rounded-full text-3xl md:text-5xl absolute mx-4 md:mx-8 mt-[230px] md:mt-[190px] cursor-pointer z-10 bg-gray-500 opacity-70 left-0"
-        onClick={() => sliderLeft(elementRef.current)}
-      />
-      <HiChevronRight
-        className="text-black rounded-full text-3xl md:text-5xl absolute mx-4 md:mx-8 mt-[230px] md:mt-[190px] cursor-pointer z-10 bg-gray-500 opacity-70 right-0"
-        onClick={() => sliderRight(elementRef.current)}
-      />
+      {!loading && (
+        <>
+          <HiChevronLeft
+            className="text-black rounded-full text-3xl md:text-5xl absolute mx-4 md:mx-8 mt-[230px] md:mt-[190px] cursor-pointer z-10 bg-gray-500 opacity-70 left-0"
+            onClick={() => sliderLeft(elementRef.current)}
+          />
+          <HiChevronRight
+            className="text-black rounded-full text-3xl md:text-5xl absolute mx-4 md:mx-8 mt-[230px] md:mt-[190px] cursor-pointer z-10 bg-gray-500 opacity-70 right-0"
+            onClick={() => sliderRight(elementRef.current)}
+          />
+        </>
+      )}
 
       <div
         className="flex overflow-x-auto scrollbar-hide w-full px-16 py-15 scroll-smooth"

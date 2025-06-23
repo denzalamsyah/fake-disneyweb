@@ -21,12 +21,30 @@ function TVList() {
   const elementRefOta = useRef();
   const elementRefAT = useRef();
   const elementRefP = useRef();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchTVListAringToday().then(setAiringToday);
-    fetchTVListPopuler().then(setPopuler);
-    fetchTVListOnTheAir().then(setonTheAir);
-    fetchTVListTopRated().then(setToprate);
+    const fetchData = async () => {
+      try {
+        const [airing, populer, onTheAir, toprate] = await Promise.all([
+          fetchTVListAringToday(),
+          fetchTVListPopuler(),
+          fetchTVListOnTheAir(),
+          fetchTVListTopRated(),
+        ]);
+
+        setAiringToday(airing);
+        setPopuler(populer);
+        setonTheAir(onTheAir);
+        setToprate(toprate);
+      } catch (error) {
+        console.error("Failed to fetch TV data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const sliderRight = (element) => {
@@ -57,14 +75,18 @@ function TVList() {
           Top Rate
         </h2>
         <div className="relative">
-          <HiChevronLeft
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
-            onClick={() => sliderLeft(elementRef.current)}
-          />
-          <HiChevronRight
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
-            onClick={() => sliderRight(elementRef.current)}
-          />
+          {!loading && (
+            <>
+              <HiChevronLeft
+                className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
+                onClick={() => sliderLeft(elementRef.current)}
+              />
+              <HiChevronRight
+                className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
+                onClick={() => sliderRight(elementRef.current)}
+              />
+            </>
+          )}
           <div
             ref={elementRef}
             className="flex gap-4 overflow-x-auto scrollbar-hide px-3
@@ -84,14 +106,19 @@ function TVList() {
           Populer
         </h2>
         <div className="relative">
-          <HiChevronLeft
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
-            onClick={() => sliderLeft(elementRefP.current)}
-          />
-          <HiChevronRight
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
-            onClick={() => sliderRight(elementRefP.current)}
-          />
+          {!loading && (
+            <>
+              {" "}
+              <HiChevronLeft
+                className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
+                onClick={() => sliderLeft(elementRefP.current)}
+              />
+              <HiChevronRight
+                className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
+                onClick={() => sliderRight(elementRefP.current)}
+              />
+            </>
+          )}
           <div
             ref={elementRefP}
             className="flex gap-4 overflow-x-auto scrollbar-hide px-3
@@ -111,14 +138,18 @@ function TVList() {
           On The Air
         </h2>
         <div className="relative">
-          <HiChevronLeft
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
-            onClick={() => sliderLeft(elementRefOta.current)}
-          />
-          <HiChevronRight
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
-            onClick={() => sliderRight(elementRefOta.current)}
-          />
+          {!loading && (
+            <>
+              <HiChevronLeft
+                className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
+                onClick={() => sliderLeft(elementRefOta.current)}
+              />
+              <HiChevronRight
+                className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
+                onClick={() => sliderRight(elementRefOta.current)}
+              />
+            </>
+          )}
           <div
             ref={elementRefOta}
             className="flex gap-4 overflow-x-auto scrollbar-hide px-3
@@ -138,14 +169,18 @@ function TVList() {
           Airig Today
         </h2>
         <div className="relative">
-          <HiChevronLeft
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
-            onClick={() => sliderLeft(elementRefAT.current)}
-          />
-          <HiChevronRight
-            className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
-            onClick={() => sliderRight(elementRefAT.current)}
-          />
+          {!loading && (
+            <>
+              <HiChevronLeft
+                className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer left-0 mt-[40px] md:mt-[80px]"
+                onClick={() => sliderLeft(elementRefAT.current)}
+              />
+              <HiChevronRight
+                className="text-black bg-gray-400 opacity-70 rounded-full text-3xl md:mx-4 md:text-5xl absolute z-[10] cursor-pointer right-0 mt-[40px] md:mt-[80px]"
+                onClick={() => sliderRight(elementRefAT.current)}
+              />
+            </>
+          )}
           <div
             ref={elementRefAT}
             className="flex gap-4 overflow-x-auto scrollbar-hide px-3

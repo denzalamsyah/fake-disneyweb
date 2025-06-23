@@ -34,8 +34,8 @@ function AllList() {
 
   return (
     <main className="py-28 md:py-50">
-      <section className="md:mx-5 md:p-5 grid md:grid-cols-4 gap-8 rounded-xl">
-        <div className="md:rounded-xl md:max-h-[500px] border-b md:border">
+      <section className="md:mx-5 md:p-5 grid md:grid-cols-4 gap-8 rounded-xl bg-gray-800">
+        <div className="md:rounded-xl h-fit border-b md:border">
           <h2 className="text-center bg-green-400 text-white p-4 md:rounded-t-lg text-lg">
             Search Result
           </h2>
@@ -101,7 +101,7 @@ function AllList() {
                 return (
                   <div
                     key={`${item.media_type}-${item.id}`}
-                    className="flex cursor-pointer rounded-xl border hover:transition-transform hover:scale-102 ease-in-out shadow-white"
+                    className="flex cursor-pointer rounded-xl hover:transition-transform hover:scale-102 ease-in-out shadow-md shadow-gray-500"
                     onClick={handleCardClick} // Navigasi saat div diklik
                   >
                     {item.media_type == "movie" && (
@@ -120,14 +120,14 @@ function AllList() {
                             item.name ||
                             "No Image"
                           }
-                          className="rounded-tl-xl rounded-bl-xl w-30 object-cover"
+                          className="rounded-tl-xl rounded-bl-xl w-30 max-h-[150px] md:w-50 md:max-h-[250px] object-cover"
                         />
                         <div className="text-gray-50 p-4 md:p-10">
                           <h2 className="font-bold text-[14px] md:text-xl">
                             {item.title || "-"}
                           </h2>
-                          <p className="font-semibold text-[10px] md:text-sm mb-5">
-                            {item.release_date || "-"}
+                          <p className="font-semibold text-[10px] md:text-sm my-5 md:mt-3 md:mb-10">
+                            Realise: {item.release_date || "-"}
                           </p>
                           <div className="flex text-[10px] md:text-sm gap-1 md:gap-2 flex-wrap">
                             <span className="text-justify md:border-3 md:rounded-sm md:p-2 md:border-green-700 text-green-400">
@@ -159,13 +159,13 @@ function AllList() {
                             item.name ||
                             "No Image"
                           }
-                          className="rounded-tl-xl rounded-bl-xl w-30 object-cover"
+                          className="rounded-tl-xl rounded-bl-xl w-30 max-h-[150px] md:w-50 md:max-h-[250px] object-cover"
                         />
                         <div className="text-gray-50 p-4 md:p-10">
                           <h2 className="font-bold text-[14px] md:text-xl">
                             Name : {item.name || "-"}
                           </h2>
-                          <p className="font-semibold text-[10px] md:text-sm  mb-5">
+                          <p className="font-semibold text-[10px] mb-4 md:text-sm md:mb-5">
                             Departement : {item.known_for_department || "-"}
                           </p>
                           <div className="flex text-[10px] md:text-sm gap-1 md:gap-2 flex-wrap">
@@ -183,9 +183,9 @@ function AllList() {
                       <>
                         <img
                           src={
-                            item.profile_path || item.backdrop_path
+                            item.poster_path || item.backdrop_path
                               ? `https://image.tmdb.org/t/p/w200${
-                                  item.profile_path || item.backdrop_path
+                                  item.poster_path || item.backdrop_path
                                 }`
                               : logo
                           }
@@ -195,13 +195,13 @@ function AllList() {
                             item.name ||
                             "No Image"
                           }
-                          className="rounded-tl-xl rounded-bl-xl w-30 object-cover"
+                          className="rounded-tl-xl rounded-bl-xl w-30 max-h-[150px] md:w-50 md:max-h-[250px] object-cover"
                         />
                         <div className="text-gray-50 p-4 md:p-10">
                           <h2 className="font-bold text-[14px] md:text-xl">
                             Name : {item.name || "-"}
                           </h2>
-                          <p className="font-semibold text-[10px] md:text-sm  mb-5">
+                          <p className="font-semibold text-[10px] my-5 md:text-sm md:mb-10">
                             First Air Date : {item.first_air_date || "-"}
                           </p>
                           <div className="flex text-[10px] md:text-sm gap-1 md:gap-2 flex-wrap">

@@ -37,8 +37,8 @@ function TVshowsFiltered() {
 
   return (
     <main className="py-28 md:py-50">
-      <section className="md:mx-5 md:p-5 grid md:grid-cols-4 gap-8 rounded-xl">
-        <div className="md:rounded-xl h-fit border-b md:border">
+      <section className="md:mx-5 md:p-5 grid md:grid-cols-4 gap-8 rounded-xl bg-gray-800">
+        <div className="md:rounded-xl h-fit border-b md:border bg-gray-800">
           <h2 className="text-center bg-blue-400 text-white p-4 md:rounded-t-lg text-lg">
             TV Shows List
           </h2>
@@ -48,9 +48,7 @@ function TVshowsFiltered() {
                 key={g.id}
                 className={`
               cursor-pointer border text-[12px] p-2 md:text-sm rounded-lg hover:bg-gray-700
-              ${
-                setTVKategori === g.id ? "font-bold bg-gray-800 text-white" : ""
-              }
+              ${TV === g.kategori ? "font-bold bg-gray-700 text-white" : ""}
             `}
                 onClick={() => setTVKategori(g.kategori)}
               >
@@ -70,7 +68,7 @@ function TVshowsFiltered() {
                 return (
                   <div
                     key={`${item.media_type}-${item.id}`}
-                    className="flex cursor-pointer rounded-xl border hover:transition-transform hover:scale-102 ease-in-out shadow-white"
+                    className="flex cursor-pointer rounded-xl hover:transition-transform hover:scale-102 ease-in-out shadow-md shadow-gray-500 bg-gray-800"
                     onClick={handleCardClick} // Navigasi saat div diklik
                   >
                     <>
@@ -83,13 +81,13 @@ function TVshowsFiltered() {
                             : logo
                         }
                         alt={item.original_title || item.name || "No Image"}
-                        className="rounded-tl-xl rounded-bl-xl w-30 object-cover"
+                        className="rounded-tl-xl rounded-bl-xl w-30 md:w-50 md:max-h-[250px] object-cover"
                       />
                       <div className="text-gray-50 p-4 md:p-10">
                         <h2 className="font-bold text-[14px] md:text-xl">
                           {item.name || "-"}
                         </h2>
-                        <p className="font-semibold text-[10px] md:text-sm mb-5">
+                        <p className="font-semibold text-[10px] md:text-sm mb-5 md:mb-10">
                           {item.first_air_date || "-"}
                         </p>
                         <div className="flex text-[10px] md:text-sm gap-1 md:gap-2 flex-wrap">

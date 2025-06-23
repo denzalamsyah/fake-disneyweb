@@ -12,7 +12,6 @@ function MovieFiltered() {
   useEffect(() => {
     fetchMoviesByGenre(Genre).then(setMovieListbyGenre);
   }, [Genre]);
-  console.log("ini data", movieListbyGenre);
 
   const [showAll, setShowAll] = useState(false);
   const visibleCount = 4;
@@ -20,18 +19,18 @@ function MovieFiltered() {
 
   return (
     <main className="py-28 md:py-50">
-      <section className="md:mx-5 md:p-5 grid md:grid-cols-4 gap-8 rounded-xl">
+      <section className="md:mx-5 md:p-5 grid md:grid-cols-4 gap-8 rounded-xl bg-gray-800">
         <div className="md:rounded-xl h-fit border-b md:border">
           <h2 className="text-center bg-blue-400 text-white p-4 md:rounded-t-lg text-lg">
             MOVIES
           </h2>
-          <div className="flex flex-wrap items-center justify-center md:grid md:grid-cols-1 gap-4 md:mt-4 p-4 md:p-2 px-5">
+          <div className="bg-gray-800 flex flex-wrap items-center justify-center md:grid md:grid-cols-1 gap-4 p-4 md:p-2 md:py-5 px-5">
             {visibleGenres.map((g) => (
               <span
                 key={g.id}
                 className={`
               cursor-pointer border text-[12px] p-2 md:text-sm rounded-lg hover:bg-gray-700
-              ${setGenreId === g.id ? "font-bold bg-gray-800 text-white" : ""}
+              ${Genre === g.id ? "font-bold bg-gray-700 text-white" : ""}
             `}
                 onClick={() => setGenreId(g.id)}
               >
@@ -40,7 +39,7 @@ function MovieFiltered() {
             ))}
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center bg-gray-800 md:rounded-xl">
             <button
               onClick={() => setShowAll((prev) => !prev)}
               className="flex items-center gap-1 text-[10px] text-gray-300 hover:text-gray-200"
@@ -61,7 +60,7 @@ function MovieFiltered() {
                 return (
                   <div
                     key={`${item.media_type}-${item.id}`}
-                    className="flex cursor-pointer rounded-xl border hover:transition-transform hover:scale-102 ease-in-out shadow-white"
+                    className="flex cursor-pointer rounded-xl hover:transition-transform hover:scale-102 ease-in-out shadow-md shadow-gray-500 bg-gray-800"
                     onClick={handleCardClick} // Navigasi saat div diklik
                   >
                     <>
@@ -79,13 +78,13 @@ function MovieFiltered() {
                           item.name ||
                           "No Image"
                         }
-                        className="rounded-tl-xl rounded-bl-xl w-30 object-cover"
+                        className="rounded-tl-xl rounded-bl-xl w-30 md:w-50 md:max-h-[250px] object-cover"
                       />
                       <div className="text-gray-50 p-4 md:p-10">
                         <h2 className="font-bold text-[14px] md:text-xl">
                           {item.title || "-"}
                         </h2>
-                        <p className="font-semibold text-[10px] md:text-sm mb-5">
+                        <p className="font-semibold text-[10px] md:text-sm mt-5 mb-10">
                           {item.release_date || "-"}
                         </p>
                         <div className="flex text-[10px] md:text-sm gap-1 md:gap-2 flex-wrap">

@@ -23,7 +23,7 @@ function Persondetail() {
     );
 
   return (
-    <main className="text-white pt-15 md:pt-30 bg-black h-auto">
+    <main className="text-white pt-18 md:pt-30 bg-black h-auto">
       <section
         className="px-4 md:px-15 w-full min-h-[450px] bg-cover bg-no-repeat bg-center py-10 border-none md:pt-50"
         style={{

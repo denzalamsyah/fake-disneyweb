@@ -32,7 +32,7 @@ function TvListDetail() {
     setFav(!fav);
   }
   return (
-    <main className="text-white py-10 md:pt-30 bg-gray-900">
+    <main className="text-white pb-10 pt-18 md:pt-30 bg-gray-900">
       <div
         className="px-4 mb-10 md:px-0 w-full bg-cover bg-no-repeat py-10 border-none"
         style={{

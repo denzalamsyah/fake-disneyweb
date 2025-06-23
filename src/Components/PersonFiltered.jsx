@@ -14,17 +14,25 @@ function PersonListFiltered() {
 
   return (
     <main className="py-28 md:py-50">
-      <section className="md:mx-5 md:p-5 grid md:grid-cols-4 gap-8 rounded-xl">
+      <section className="md:mx-5 md:p-5 grid md:grid-cols-4 gap-8 rounded-xl bg-gray-800">
         <div className="md:rounded-xl h-fit border-b md:border">
-          <h2 className="text-center bg-blue-400 text-white p-4 md:rounded-t-lg text-lg">
-            Person List
+          <h2 className="text-center bg-gray-600 text-white p-4 md:rounded-t-lg text-lg">
+            "Meet Your Favorite Stars"
           </h2>
-          <div className="flex flex-wrap items-center justify-center md:grid md:grid-cols-1 gap-4 md:mt-4 p-4 md:p-2 px-5">
-            <p>Populer Person</p>
-          </div>
+
+          <p className="text-justify p-5">
+            The world of entertainment wouldn't be the same without the iconic
+            actors and actresses who captivate audiences with their talent and
+            charisma. Below is a lineup of today’s most popular cast
+            members—recognized for their unforgettable roles, outstanding
+            performances, and powerful presence in the film and television
+            industry. Discover the familiar faces behind your favorite
+            characters and see why they continue to inspire millions around the
+            globe.
+          </p>
         </div>
         <div className="mx-5 md:mx-0 md:col-span-3 rounded-xl">
-          <div className="grid grid-cols-1 gap-8 rounded-xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 rounded-xl">
             {PersonPupular.length > 0 ? (
               PersonPupular.map((item) => {
                 const handleCardClick = () => {
@@ -34,7 +42,7 @@ function PersonListFiltered() {
                 return (
                   <div
                     key={`${item.media_type}-${item.id}`}
-                    className="flex cursor-pointer rounded-xl border hover:transition-transform hover:scale-102 ease-in-out shadow-white"
+                    className="flex cursor-pointer rounded-xl hover:transition-transform hover:scale-102 ease-in-out shadow-md shadow-gray-500"
                     onClick={handleCardClick} // Navigasi saat div diklik
                   >
                     <>
@@ -45,7 +53,7 @@ function PersonListFiltered() {
                             : logo
                         }
                         alt={item.original_name || item.name || "No Image"}
-                        className="rounded-tl-xl rounded-bl-xl w-30 object-cover"
+                        className="rounded-tl-xl rounded-bl-xl w-30 md:w-50 md:max-h-[250px] object-cover"
                       />
                       <div className="text-gray-50 p-4 md:p-10">
                         <h2 className="font-bold text-[14px] md:text-xl">
