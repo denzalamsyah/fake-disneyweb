@@ -7,7 +7,7 @@ import { FaStar } from "react-icons/fa";
 import { MdLocalMovies } from "react-icons/md";
 // import { MdCamera } from "react-icons/md";
 import HeaderItems from "./HeaderItems";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaBars } from "react-icons/fa6";
 import { MdCancel } from "react-icons/md";
@@ -21,6 +21,9 @@ function Header() {
   const [ShowProfile, setShowProfile] = useState(false);
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
+  const profileRef = useRef(null);
+  const notifRef = useRef(null);
+  const searchRef = useRef(null);
 
   const menu = [
     {
@@ -44,6 +47,37 @@ function Header() {
       rute: "/person",
     },
   ];
+
+  // menutup komponen ketika klik dimanapun
+  useEffect(() => {
+    function handleClickOutside(event) {
+      const clickedOutsideProfile =
+        profileRef.current && !profileRef.current.contains(event.target);
+      const clickedOutsideNotif =
+        notifRef.current && !notifRef.current.contains(event.target);
+      const clickOutsideSearch =
+        searchRef.current && !searchRef.current.contains(event.target);
+      if (ShowProfile && clickedOutsideProfile) {
+        setShowProfile(false);
+      }
+
+      if (ShowNotification && clickedOutsideNotif) {
+        setShowNotification(false);
+      }
+
+      if (showSearchMenu && clickOutsideSearch) {
+        setShowSearchMenu(false);
+      }
+    }
+
+    // Tambahkan event listener saat komponen ter-mount
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Hapus event listener saat komponen ter-unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ShowProfile, ShowNotification, showSearchMenu]);
 
   return (
     <>
@@ -104,6 +138,7 @@ function Header() {
             className="cursor-pointer"
           />
           <span
+            ref={notifRef}
             onClick={() => setShowNotification(!ShowNotification)}
             className="cursor-pointer "
           >
@@ -119,32 +154,49 @@ function Header() {
           />
           {/* tampilkan toggle profile */}
           {ShowProfile && (
-            <div className="absolute border border-gray-600 bg-gray-800 rounded-lg top-15 right-2 grid grid-cols-1 text-sm w-40 md:top-25 md:right-5">
-              <div className="border-b p-2 px-4 cursor-pointer">
-                <h2 className="hover:underline underline-offset-4 font-bold">
+            <div
+              ref={profileRef}
+              className="absolute border border-gray-600 bg-gray-800 rounded-lg top-15 right-2 grid grid-cols-1 text-sm w-40 md:top-25 md:right-5"
+            >
+              <div className="border-b grid grid-cols-1 gap-1 p-2 px-4 cursor-pointer">
+                <a
+                  href="#"
+                  className="hover:underline underline-offset-4 font-bold"
+                >
                   Your Username
-                </h2>
-                <p className="text-[10px] mt-2 hover:text-gray-500">
+                </a>
+                <a href="#" className="text-[10px] mt-2 hover:text-gray-500">
                   View Profile
-                </p>
+                </a>
               </div>
-              <div className="border-b p-2 px-4 cursor-pointer">
-                <p className="hover:underline underline-offset-4">
+              <div className="border-b grid grid-cols-1 gap-1 p-2 px-4 cursor-pointer">
+                <a href="#" className="hover:underline underline-offset-4">
                   Discussions
-                </p>
-                <p className="hover:underline underline-offset-4">List</p>
-                <p className="hover:underline underline-offset-4">Rating</p>
-                <p className="hover:underline underline-offset-4">Watchlist</p>
+                </a>
+                <a href="#" className="hover:underline underline-offset-4">
+                  List
+                </a>
+                <a href="#" className="hover:underline underline-offset-4">
+                  Rating
+                </a>
+                <a href="#" className="hover:underline underline-offset-4">
+                  Watchlist
+                </a>
               </div>
-              <div className="border-b p-2 px-4 cursor-pointer">
-                <p className="hover:underline underline-offset-4">
+              <div className="border-b grid grid-cols-1 gap-1 p-2 px-4 cursor-pointer">
+                <a href="#" className="hover:underline underline-offset-4">
                   Edit Profile
-                </p>
-                <p className="hover:underline underline-offset-4">Settings</p>
+                </a>
+                <a href="#" className="hover:underline underline-offset-4">
+                  Settings
+                </a>
               </div>
-              <p className="p-2 px-4 cursor-pointer hover:underline underline-offset-4">
+              <a
+                href="#"
+                className="p-2 px-4 cursor-pointer hover:underline underline-offset-4"
+              >
                 Logout
-              </p>
+              </a>
             </div>
           )}
           {/* tampilkan notifikasi */}
@@ -182,7 +234,10 @@ function Header() {
       </div>
       {/* tampilkan menu ketika klik burger */}
       {showSearchMenu && (
-        <div className="fixed mt-18 md:mt-28 w-full h-10 bg-[#1c2833] opacity-90 z-10">
+        <div
+          ref={searchRef}
+          className="fixed mt-18 md:mt-28 w-full h-10 bg-[#1c2833] opacity-90 z-10"
+        >
           {/* Close Button */}
           <div className="w-full h-full flex items-center px-5 gap-5">
             <span
